@@ -812,6 +812,52 @@ void runHardCodedTestCases(){
     cout << "Chat_GPT Test case 96 (Evaluate derivative of cubic at x=2): " << eval_derivative_cubic_gpt << endl;
     cout << "Copilot Test case 96 (Evaluate derivative of cubic at x=2): " << eval_derivative_cubic_copilot << endl;
 
+    // Test case 97: Finding roots of a quadratic polynomial with imaginary roots (f(x) = x^2 + 1)
+    PolynomialWithChatGPT imaginary_quadratic_poly({1, 0, 1}); // Represents f(x) = x^2 + 1
+    PolynomialWithCopilot imaginary_quadratic_poly_copilot({1, 0, 1}); // Represents f(x) = x^2 + 1
+    auto roots_imaginary_quadratic_gpt = imaginary_quadratic_poly.getRoot(0); // Get roots
+    auto roots_imaginary_quadratic_copilot = imaginary_quadratic_poly_copilot.getRoot(0); // Get roots
+    cout << "Expected: Imaginary roots i and -i" << endl;
+    cout << "Chat_GPT Test case 97 (Imaginary roots of quadratic polynomial): " << roots_imaginary_quadratic_gpt << endl;
+    cout << "Copilot Test case 97 (Imaginary roots of quadratic polynomial): " << roots_imaginary_quadratic_copilot << endl;
+
+// Test case 98: Finding roots of a cubic polynomial with one real and two imaginary roots (f(x) = x^3 + 2x^2 + 5x + 6)
+    PolynomialWithChatGPT cubic_imaginary_poly({6, 5, 2, 1}); // Represents f(x) = x^3 + 2x^2 + 5x + 6
+    PolynomialWithCopilot cubic_imaginary_poly_copilot({6, 5, 2, 1}); // Represents f(x) = x^3 + 2x^2 + 5x + 6
+    auto roots_imaginary_cubic_gpt = cubic_imaginary_poly.getRoot(0); // Get roots
+    auto roots_imaginary_cubic_copilot = cubic_imaginary_poly_copilot.getRoot(0); // Get roots
+    cout << "Expected: One real root (-1.38) and two complex roots (complex numbers)" << endl; // Real root approx -1.38
+    cout << "Chat_GPT Test case 98 (Imaginary roots of cubic polynomial): " << roots_imaginary_cubic_gpt << endl;
+    cout << "Copilot Test case 98 (Imaginary roots of cubic polynomial): " << roots_imaginary_cubic_copilot << endl;
+
+// Test case 99: Finding roots of a quartic polynomial with imaginary roots (f(x) = x^4 + 4x^2 + 5)
+    PolynomialWithChatGPT quartic_imaginary_poly({5, 0, 4, 0, 1}); // Represents f(x) = x^4 + 4x^2 + 5
+    PolynomialWithCopilot quartic_imaginary_poly_copilot({5, 0, 4, 0, 1}); // Represents f(x) = x^4 + 4x^2 + 5
+    auto roots_imaginary_quartic_gpt = quartic_imaginary_poly.getRoot(0); // Get roots
+    auto roots_imaginary_quartic_copilot = quartic_imaginary_poly_copilot.getRoot(0); // Get roots
+    cout << "Expected: Two pairs of imaginary roots (±sqrt(2)i, ±sqrt(3)i)" << endl;
+    cout << "Chat_GPT Test case 99 (Imaginary roots of quartic polynomial): " << roots_imaginary_quartic_gpt << endl;
+    cout << "Copilot Test case 99 (Imaginary roots of quartic polynomial): " << roots_imaginary_quartic_copilot << endl;
+
+// Test case 100: Finding roots of a polynomial with higher degree and imaginary roots (f(x) = x^5 + 1)
+    PolynomialWithChatGPT higher_degree_imaginary_poly({1, 0, 0, 0, 0, 1}); // Represents f(x) = x^5 + 1
+    PolynomialWithCopilot higher_degree_imaginary_poly_copilot({1, 0, 0, 0, 0, 1}); // Represents f(x) = x^5 + 1
+    auto roots_higher_degree_imaginary_gpt = higher_degree_imaginary_poly.getRoot(0); // Get roots
+    auto roots_higher_degree_imaginary_copilot = higher_degree_imaginary_poly_copilot.getRoot(0); // Get roots
+    cout << "Expected: Five roots, one real root (-1) and four complex roots (±sqrt(2)i)" << endl; // Real root -1
+    cout << "Chat_GPT Test case 100 (Imaginary roots of higher degree polynomial): " << roots_higher_degree_imaginary_gpt << endl;
+    cout << "Copilot Test case 100 (Imaginary roots of higher degree polynomial): " << roots_higher_degree_imaginary_copilot << endl;
+
+// Test case 101: Finding roots of a quadratic polynomial with real roots (f(x) = x^2 - 4)
+    PolynomialWithChatGPT real_imaginary_poly({-4, 0, 1}); // Represents f(x) = x^2 - 4
+    PolynomialWithCopilot real_imaginary_poly_copilot({-4, 0, 1}); // Represents f(x) = x^2 - 4
+    auto roots_real_imaginary_gpt = real_imaginary_poly.getRoot(0); // Get roots
+    auto roots_real_imaginary_copilot = real_imaginary_poly_copilot.getRoot(0); // Get roots
+    cout << "Expected: Real roots 2 and -2" << endl; // Just to check if it gives the correct real roots
+    cout << "Chat_GPT Test case 101 (Real roots of quadratic polynomial): " << roots_real_imaginary_gpt << endl;
+    cout << "Copilot Test case 101 (Real roots of quadratic polynomial): " << roots_real_imaginary_copilot << endl;
+
+
 
 }
 
