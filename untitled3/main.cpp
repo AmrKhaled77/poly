@@ -574,7 +574,7 @@ void runHardCodedTestCases(){
 
 
 
-// Test case 75: Composing two polynomials (e.g., f(x) = x^2, g(x) = 2x + 3; f(g(x)))
+// Test case 70: Composing two polynomials (e.g., f(x) = x^2, g(x) = 2x + 3; f(g(x)))
     PolynomialWithChatGPT f_poly({0, 1, 0}); // Represents x^2
     PolynomialWithChatGPT g_poly({3, 2});    // Represents 2x + 3
     PolynomialWithChatGPT composed_poly_gpt = f_poly.compose(g_poly); // f(g(x))
@@ -584,10 +584,10 @@ void runHardCodedTestCases(){
     PolynomialWithCopilot composed_poly_copilot = f_poly_copilot.compose(g_poly_copilot); // f(g(x))
     double value_composed_copilot = composed_poly_copilot.evaluate(1); // Evaluate at x = 1
     cout << "Expected: 25" << endl; // f(g(1)) = f(5) = 5^2 = 25
-    cout << "Chat_GPT Test case 75 (Composition of polynomials): " << value_composed_gpt << endl;
-    cout << "Copilot Test case 75 (Composition of polynomials): " << value_composed_copilot << endl;
+    cout << "Chat_GPT Test case 70 (Composition of polynomials): " << value_composed_gpt << endl;
+    cout << "Copilot Test case 70 (Composition of polynomials): " << value_composed_copilot << endl;
 
-// Test case 76: Composing polynomials with a constant (e.g., f(x) = x + 1, g(x) = 3)
+// Test case 71: Composing polynomials with a constant (e.g., f(x) = x + 1, g(x) = 3)
     PolynomialWithChatGPT const_poly({3}); // Represents constant polynomial 3
     PolynomialWithChatGPT f_poly2({1, 1}); // Represents x + 1
     PolynomialWithChatGPT composed_poly2_gpt = f_poly2.compose(const_poly); // f(3)
@@ -597,10 +597,10 @@ void runHardCodedTestCases(){
     PolynomialWithCopilot composed_poly2_copilot = f_poly2_copilot.compose(const_poly_copilot); // f(3)
     double value_composed2_copilot = composed_poly2_copilot.evaluate(0); // Evaluate f(3)
     cout << "Expected: 4" << endl; // f(3) = 3 + 1 = 4
-    cout << "Chat_GPT Test case 76 (Composition with constant polynomial): " << value_composed2_gpt << endl;
-    cout << "Copilot Test case 76 (Composition with constant polynomial): " << value_composed2_copilot << endl;
+    cout << "Chat_GPT Test case 71 (Composition with constant polynomial): " << value_composed2_gpt << endl;
+    cout << "Copilot Test case 71 (Composition with constant polynomial): " << value_composed2_copilot << endl;
 
-// Test case 77: Composing polynomials where f(x) = x^3 and g(x) = x^2 + 1
+// Test case 72: Composing polynomials where f(x) = x^3 and g(x) = x^2 + 1
     PolynomialWithChatGPT f_poly3({0, 0, 0, 1}); // Represents x^3
     PolynomialWithChatGPT g_poly2({1, 0, 1});    // Represents x^2 + 1
     PolynomialWithChatGPT composed_poly3_gpt = f_poly3.compose(g_poly2); // f(g(x))
@@ -610,10 +610,10 @@ void runHardCodedTestCases(){
     PolynomialWithCopilot composed_poly3_copilot = f_poly3_copilot.compose(g_poly2_copilot); // f(g(x))
     double value_composed3_copilot = composed_poly3_copilot.evaluate(1); // Evaluate f(g(1)) = f(2) = 2^3 = 8
     cout << "Expected: 8" << endl;
-    cout << "Chat_GPT Test case 77 (Composition of higher degree polynomials): " << value_composed3_gpt << endl;
-    cout << "Copilot Test case 77 (Composition of higher degree polynomials): " << value_composed3_copilot << endl;
+    cout << "Chat_GPT Test case 72 (Composition of higher degree polynomials): " << value_composed3_gpt << endl;
+    cout << "Copilot Test case 72 (Composition of higher degree polynomials): " << value_composed3_copilot << endl;
 
-// Test case 78: Composition resulting in a polynomial of higher degree (e.g., f(x) = x^2, g(x) = x)
+// Test case 73: Composition resulting in a polynomial of higher degree (e.g., f(x) = x^2, g(x) = x)
     PolynomialWithChatGPT f_poly4({0, 0, 1}); // Represents x^2
     PolynomialWithChatGPT g_poly3({0, 1});     // Represents x
     PolynomialWithChatGPT composed_poly4_gpt = f_poly4.compose(g_poly3); // f(g(x)) = (g(x))^2
@@ -623,194 +623,194 @@ void runHardCodedTestCases(){
     PolynomialWithCopilot composed_poly4_copilot = f_poly4_copilot.compose(g_poly3_copilot); // f(g(x)) = (g(x))^2
     double value_composed4_copilot = composed_poly4_copilot.evaluate(2); // Evaluate f(g(2)) = f(2) = 2^2 = 4
     cout << "Expected: 4" << endl;
-    cout << "Chat_GPT Test case 78 (Composition leading to higher degree polynomial): " << value_composed4_gpt << endl;
-    cout << "Copilot Test case 78 (Composition leading to higher degree polynomial): " << value_composed4_copilot << endl;
+    cout << "Chat_GPT Test case 73 (Composition leading to higher degree polynomial): " << value_composed4_gpt << endl;
+    cout << "Copilot Test case 73 (Composition leading to higher degree polynomial): " << value_composed4_copilot << endl;
 
-// Test case 79: Evaluate polynomial at a positive integer (e.g., x = 5)
+// Test case 74: Evaluate polynomial at a positive integer (e.g., x = 5)
     PolynomialWithChatGPT poly1({4, 3, 2, 1}); // Represents 4 + 3x + 2x^2 + 1x^3
     double value_at_5_gpt = poly1.evaluate(5); // Evaluate at x = 5
     double value_at_5_copilot = poly1_copilot.evaluate(5); // Evaluate at x = 5
     cout << "Expected: 4 + 15 + 50 + 125 = 194" << endl;
-    cout << "Chat_GPT Test case 79 (Evaluation at x=5): " << value_at_5_gpt << endl;
-    cout << "Copilot Test case 79 (Evaluation at x=5): " << value_at_5_copilot << endl;
+    cout << "Chat_GPT Test case 74 (Evaluation at x=5): " << value_at_5_gpt << endl;
+    cout << "Copilot Test case 74 (Evaluation at x=5): " << value_at_5_copilot << endl;
 
-// Test case 80: Evaluate polynomial at zero (e.g., x = 0)
+// Test case 75: Evaluate polynomial at zero (e.g., x = 0)
     double value_at_0_gpt = poly1.evaluate(0); // Should give the constant term
     double value_at_0_copilot = poly1_copilot.evaluate(0); // Should give the constant term
     cout << "Expected: 4" << endl;
-    cout << "Chat_GPT Test case 80 (Evaluation at x=0): " << value_at_0_gpt << endl;
-    cout << "Copilot Test case 80 (Evaluation at x=0): " << value_at_0_copilot << endl;
+    cout << "Chat_GPT Test case 75 (Evaluation at x=0): " << value_at_0_gpt << endl;
+    cout << "Copilot Test case 75 (Evaluation at x=0): " << value_at_0_copilot << endl;
 
-// Test case 81: Evaluate polynomial at a negative integer (e.g., x = -2)
+// Test case 76: Evaluate polynomial at a negative integer (e.g., x = -2)
     double value_at_neg2_gpt = poly1.evaluate(-2); // Evaluate at x = -2
     double value_at_neg2_copilot = poly1_copilot.evaluate(-2); // Evaluate at x = -2
     cout << "Expected: 4 - 6 + 8 - 8 = -2" << endl;
-    cout << "Chat_GPT Test case 81 (Evaluation at x=-2): " << value_at_neg2_gpt << endl;
-    cout << "Copilot Test case 81 (Evaluation at x=-2): " << value_at_neg2_copilot << endl;
+    cout << "Chat_GPT Test case 76 (Evaluation at x=-2): " << value_at_neg2_gpt << endl;
+    cout << "Copilot Test case 76 (Evaluation at x=-2): " << value_at_neg2_copilot << endl;
 
-// Test case 82: Evaluate polynomial at a fraction (e.g., x = 0.5)
+// Test case 77: Evaluate polynomial at a fraction (e.g., x = 0.5)
     double value_at_half_gpt = poly1.evaluate(0.5); // Evaluate at x = 0.5
     double value_at_half_copilot = poly1_copilot.evaluate(0.5); // Evaluate at x = 0.5
     cout << "Expected: 4 + 1.5 + 0.5 + 0.125 = 6.125" << endl;
-    cout << "Chat_GPT Test case 82 (Evaluation at x=0.5): " << value_at_half_gpt << endl;
-    cout << "Copilot Test case 82 (Evaluation at x=0.5): " << value_at_half_copilot << endl;
+    cout << "Chat_GPT Test case 77 (Evaluation at x=0.5): " << value_at_half_gpt << endl;
+    cout << "Copilot Test case 77 (Evaluation at x=0.5): " << value_at_half_copilot << endl;
 
-// Test case 83: Evaluate polynomial at a very large number (e.g., x = 1e6)
+// Test case 78: Evaluate polynomial at a very large number (e.g., x = 1e6)
     double value_at_large_gpt = poly1.evaluate(1e6); // Evaluate at x = 1e6
     double value_at_large_copilot = poly1_copilot.evaluate(1e6); // Evaluate at x = 1e6
     cout << "Expected: Large number" << endl; // Expected: Large value
-    cout << "Chat_GPT Test case 83 (Evaluation at x=1e6): " << value_at_large_gpt << endl;
-    cout << "Copilot Test case 83 (Evaluation at x=1e6): " << value_at_large_copilot << endl;
+    cout << "Chat_GPT Test case 78 (Evaluation at x=1e6): " << value_at_large_gpt << endl;
+    cout << "Copilot Test case 78 (Evaluation at x=1e6): " << value_at_large_copilot << endl;
 
-// Test case 84: Evaluate polynomial at a very small positive value (e.g., x = 0.0001)
+// Test case 79: Evaluate polynomial at a very small positive value (e.g., x = 0.0001)
     double value_at_small_gpt = poly1.evaluate(0.0001); // Evaluate at x = 0.0001
     double value_at_small_copilot = poly1_copilot.evaluate(0.0001); // Evaluate at x = 0.0001
     cout << "Expected: 4 + 0.0003 + 0.00000002 + 0.000000000001 = Close to 4" << endl;
-    cout << "Chat_GPT Test case 84 (Evaluation at x=0.0001): " << value_at_small_gpt << endl;
-    cout << "Copilot Test case 84 (Evaluation at x=0.0001): " << value_at_small_copilot << endl;
+    cout << "Chat_GPT Test case 79 (Evaluation at x=0.0001): " << value_at_small_gpt << endl;
+    cout << "Copilot Test case 79 (Evaluation at x=0.0001): " << value_at_small_copilot << endl;
 
-// Test case 85: Evaluate polynomial at infinity (e.g., x = INFINITY)
+// Test case 80: Evaluate polynomial at infinity (e.g., x = INFINITY)
     double value_infinity_gpt = poly1.evaluate(INFINITY); // Should give a very large number
     double value_infinity_copilot = poly1_copilot.evaluate(INFINITY); // Should give a very large number
     cout << "Expected: Inf" << endl;
-    cout << "Chat_GPT Test case 85 (Evaluation at x=INFINITY): " << value_infinity_gpt << endl;
-    cout << "Copilot Test case 85 (Evaluation at x=INFINITY): " << value_infinity_copilot << endl;
+    cout << "Chat_GPT Test case 80 (Evaluation at x=INFINITY): " << value_infinity_gpt << endl;
+    cout << "Copilot Test case 80 (Evaluation at x=INFINITY): " << value_infinity_copilot << endl;
 
-// Test case 86: Evaluate polynomial at negative infinity (e.g., x = -INFINITY)
+// Test case 81: Evaluate polynomial at negative infinity (e.g., x = -INFINITY)
     double value_neg_infinity_gpt = poly1.evaluate(-INFINITY); // Should give a very negative number
     double value_neg_infinity_copilot = poly1_copilot.evaluate(-INFINITY); // Should give a very negative number
     cout << "Expected: -Inf" << endl;
-    cout << "Chat_GPT Test case 86 (Evaluation at x=-INFINITY): " << value_neg_infinity_gpt << endl;
-    cout << "Copilot Test case 86 (Evaluation at x=-INFINITY): " << value_neg_infinity_copilot << endl;
+    cout << "Chat_GPT Test case 81 (Evaluation at x=-INFINITY): " << value_neg_infinity_gpt << endl;
+    cout << "Copilot Test case 81 (Evaluation at x=-INFINITY): " << value_neg_infinity_copilot << endl;
 
-// Test case 89: Definite integral of a polynomial from x=0 to x=1
+// Test case 82: Definite integral of a polynomial from x=0 to x=1
     PolynomialWithChatGPT polY1({1, 2, 3}); // Represents 1 + 2x + 3x^2
     PolynomialWithCopilot polY1_copilot({1, 2, 3});
     double definiteIntegral_0_to_1_gpt = polY1.integral(0, 1); // Evaluate integral from 0 to 1
     double definiteIntegral_0_to_1_copilot = polY1_copilot.integral(0, 1); // Evaluate integral from 0 to 1
     cout << "Expected: [x + x^2 + x^3] from 0 to 1 = 1 + 1 + 1 = 3" << endl;
-    cout << "Chat_GPT Test case 89 (Definite Integral from 0 to 1): " << definiteIntegral_0_to_1_gpt << endl;
-    cout << "Copilot Test case 89 (Definite Integral from 0 to 1): " << definiteIntegral_0_to_1_copilot << endl;
+    cout << "Chat_GPT Test case 82 (Definite Integral from 0 to 1): " << definiteIntegral_0_to_1_gpt << endl;
+    cout << "Copilot Test case 82 (Definite Integral from 0 to 1): " << definiteIntegral_0_to_1_copilot << endl;
 
-// Test case 90: Definite integral of a polynomial from x=1 to x=2
+// Test case 83: Definite integral of a polynomial from x=1 to x=2
     double definiteIntegral_1_to_2_gpt = polY1.integral(1, 2); // Evaluate integral from 1 to 2
     double definiteIntegral_1_to_2_copilot = polY1_copilot.integral(1, 2); // Evaluate integral from 1 to 2
     cout << "Expected: [x + x^2 + x^3] from 1 to 2 = (2 + 4 + 8) - (1 + 1 + 1) = 13 - 3 = 10" << endl;
-    cout << "Chat_GPT Test case 90 (Definite Integral from 1 to 2): " << definiteIntegral_1_to_2_gpt << endl;
-    cout << "Copilot Test case 90 (Definite Integral from 1 to 2): " << definiteIntegral_1_to_2_copilot << endl;
+    cout << "Chat_GPT Test case 83 (Definite Integral from 1 to 2): " << definiteIntegral_1_to_2_gpt << endl;
+    cout << "Copilot Test case 83 (Definite Integral from 1 to 2): " << definiteIntegral_1_to_2_copilot << endl;
 
-// Test case 91: Indefinite integral of a polynomial
+// Test case 84: Indefinite integral of a polynomial
     auto indefiniteIntegral_gpt = polY1.integral(); // Evaluate indefinite integral
     auto indefiniteIntegral_copilot = polY1_copilot.integral(); // Evaluate indefinite integral
     cout << "Expected: x + x^2 + x^3 + C" << endl;
-    cout << "Chat_GPT Test case 91 (Indefinite Integral): " << indefiniteIntegral_gpt << endl;
-    cout << "Copilot Test case 91 (Indefinite Integral): " << indefiniteIntegral_copilot << endl;
+    cout << "Chat_GPT Test case 84 (Indefinite Integral): " << indefiniteIntegral_gpt << endl;
+    cout << "Copilot Test case 84 (Indefinite Integral): " << indefiniteIntegral_copilot << endl;
 
-// Test case 92: Definite integral of a constant polynomial (e.g., f(x) = 5) from x=0 to x=3
+// Test case 85: Definite integral of a constant polynomial (e.g., f(x) = 5) from x=0 to x=3
     PolynomialWithChatGPT constant_poly({5}); // Represents f(x) = 5
     PolynomialWithCopilot Constant_poly_copilot({5}); // Represents f(x) = 5
     double definiteIntegral_constant_gpt = constant_poly.integral(0, 3); // Evaluate integral from 0 to 3
     double definiteIntegral_constant_copilot = constant_poly_copilot.integral(0, 3); // Evaluate integral from 0 to 3
     cout << "Expected: 5 * (3 - 0) = 15" << endl;
-    cout << "Chat_GPT Test case 92 (Definite Integral of constant polynomial): " << definiteIntegral_constant_gpt << endl;
-    cout << "Copilot Test case 92 (Definite Integral of constant polynomial): " << definiteIntegral_constant_copilot << endl;
+    cout << "Chat_GPT Test case 85 (Definite Integral of constant polynomial): " << definiteIntegral_constant_gpt << endl;
+    cout << "Copilot Test case 85 (Definite Integral of constant polynomial): " << definiteIntegral_constant_copilot << endl;
 
-// Test case 93: Definite integral of a polynomial with negative coefficients from x=-1 to x=0
+// Test case 86: Definite integral of a polynomial with negative coefficients from x=-1 to x=0
     PolynomialWithChatGPT negative_poly({1, -2, -3}); // Represents 1 - 2x - 3x^2
     PolynomialWithCopilot negative_poly_copilot({1, -2, -3}); // Represents 1 - 2x - 3x^2
     double definiteIntegral_neg_gpt = negative_poly.integral(-1, 0); // Evaluate integral from -1 to 0
     double definiteIntegral_neg_copilot = negative_poly_copilot.integral(-1, 0); // Evaluate integral from -1 to 0
     cout << "Expected: [x - x^2 - x^3] from -1 to 0 = (0 - 0 - 0) - (-1 + 1 + 0) = 1" << endl;
-    cout << "Chat_GPT Test case 93 (Definite Integral of negative polynomial): " << definiteIntegral_neg_gpt << endl;
-    cout << "Copilot Test case 93 (Definite Integral of negative polynomial): " << definiteIntegral_neg_copilot << endl;
+    cout << "Chat_GPT Test case 86 (Definite Integral of negative polynomial): " << definiteIntegral_neg_gpt << endl;
+    cout << "Copilot Test case 86 (Definite Integral of negative polynomial): " << definiteIntegral_neg_copilot << endl;
 
-// Test case 95: Evaluate the integral at the boundaries (e.g., x = -INFINITY to x = INFINITY)
+// Test case 87: Evaluate the integral at the boundaries (e.g., x = -INFINITY to x = INFINITY)
     double definiteIntegral_infinity_gpt = poly1.integral(-INFINITY, INFINITY); // Evaluate integral from -INFINITY to INFINITY
     double definiteIntegral_infinity_copilot = poly1_copilot.integral(-INFINITY, INFINITY); // Evaluate integral from -INFINITY to INFINITY
     cout << "Expected: Undefined for non-zero polynomial" << endl;
-    cout << "Chat_GPT Test case 95 (Definite Integral from -Inf to Inf): " << definiteIntegral_infinity_gpt << endl;
-    cout << "Copilot Test case 95 (Definite Integral from -Inf to Inf): " << definiteIntegral_infinity_copilot << endl;
+    cout << "Chat_GPT Test case 87 (Definite Integral from -Inf to Inf): " << definiteIntegral_infinity_gpt << endl;
+    cout << "Copilot Test case 87 (Definite Integral from -Inf to Inf): " << definiteIntegral_infinity_copilot << endl;
 
-// Test case 97: Definite integral of a polynomial with fractional coefficients from x=0 to x=1
+// Test case 88: Definite integral of a polynomial with fractional coefficients from x=0 to x=1
     PolynomialWithChatGPT fractional_poly({0.5, 0.25, 0.75}); // Represents 0.5 + 0.25x + 0.75x^2
     PolynomialWithCopilot Fractional_poly_copilot({0.5, 0.25, 0.75}); // Represents 0.5 + 0.25x + 0.75x^2
     double definiteIntegral_fractional_gpt = fractional_poly.integral(0, 1); // Evaluate integral from 0 to 1
     double definiteIntegral_fractional_copilot = fractional_poly_copilot.integral(0, 1); // Evaluate integral from 0 to 1
     cout << "Expected: [0.5x + (0.25/2)x^2 + (0.75/3)x^3] from 0 to 1 = 0.5 + 0.125 + 0.25 = 0.875" << endl;
-    cout << "Chat_GPT Test case 97 (Definite Integral of fractional polynomial): " << definiteIntegral_fractional_gpt << endl;
-    cout << "Copilot Test case 97 (Definite Integral of fractional polynomial): " << definiteIntegral_fractional_copilot << endl;
+    cout << "Chat_GPT Test case 88 (Definite Integral of fractional polynomial): " << definiteIntegral_fractional_gpt << endl;
+    cout << "Copilot Test case 88 (Definite Integral of fractional polynomial): " << definiteIntegral_fractional_copilot << endl;
 
-// Test case 98: Definite integral of a higher-degree polynomial (e.g., x^4 + 2x^3 + x^2) from x=0 to x=2
+// Test case 89: Definite integral of a higher-degree polynomial (e.g., x^4 + 2x^3 + x^2) from x=0 to x=2
     PolynomialWithChatGPT higher_degree_poly({0, 1, 2, 0, 1}); // Represents x^4 + 2x^3 + x^2
     PolynomialWithCopilot higher_degree_poly_copilot({0, 1, 2, 0, 1}); // Represents x^4 + 2x^3 + x^2
     double definiteIntegral_higher_degree_gpt = higher_degree_poly.integral(0, 2); // Evaluate integral from 0 to 2
     double definiteIntegral_higher_degree_copilot = higher_degree_poly_copilot.integral(0, 2); // Evaluate integral from 0 to 2
     cout << "Expected: [1/5x^5 + (1/2)x^4 + (1/3)x^3] from 0 to 2 = (32/5 + 16 + 8/3) = 12.0667" << endl;
-    cout << "Chat_GPT Test case 98 (Definite Integral of higher-degree polynomial): " << definiteIntegral_higher_degree_gpt << endl;
-    cout << "Copilot Test case 98 (Definite Integral of higher-degree polynomial): " << definiteIntegral_higher_degree_copilot << endl;
+    cout << "Chat_GPT Test case 89 (Definite Integral of higher-degree polynomial): " << definiteIntegral_higher_degree_gpt << endl;
+    cout << "Copilot Test case 89 (Definite Integral of higher-degree polynomial): " << definiteIntegral_higher_degree_copilot << endl;
 
 
-// Test case 99: Derivative of a constant polynomial (f(x) = 5)
+// Test case 90: Derivative of a constant polynomial (f(x) = 5)
     PolynomialWithChatGPT constant_poly_derivative({5}); // Represents f(x) = 5
     PolynomialWithCopilot constant_poly_derivative_copilot({5}); // Represents f(x) = 5
     auto derivative_constant_gpt = constant_poly_derivative.derivative(); // Derivative
     auto derivative_constant_copilot = constant_poly_derivative_copilot.derivative(); // Derivative
     cout << "Expected: 0" << endl;
-    cout << "Chat_GPT Test case 99 (Derivative of constant polynomial): " << derivative_constant_gpt << endl;
-    cout << "Copilot Test case 99 (Derivative of constant polynomial): " << derivative_constant_copilot << endl;
+    cout << "Chat_GPT Test case 90 (Derivative of constant polynomial): " << derivative_constant_gpt << endl;
+    cout << "Copilot Test case 90 (Derivative of constant polynomial): " << derivative_constant_copilot << endl;
 
-// Test case 100: Derivative of a linear polynomial (f(x) = 3x + 2)
+// Test case 91: Derivative of a linear polynomial (f(x) = 3x + 2)
     PolynomialWithChatGPT linear_poly_derivative({2, 3}); // Represents f(x) = 3x + 2
     PolynomialWithCopilot linear_poly_derivative_copilot({2, 3}); // Represents f(x) = 3x + 2
     auto derivative_linear_gpt = linear_poly_derivative.derivative(); // Derivative
     auto derivative_linear_copilot = linear_poly_derivative_copilot.derivative(); // Derivative
     cout << "Expected: 3" << endl;
-    cout << "Chat_GPT Test case 100 (Derivative of linear polynomial): " << derivative_linear_gpt << endl;
-    cout << "Copilot Test case 100 (Derivative of linear polynomial): " << derivative_linear_copilot << endl;
+    cout << "Chat_GPT Test case 91 (Derivative of linear polynomial): " << derivative_linear_gpt << endl;
+    cout << "Copilot Test case 91 (Derivative of linear polynomial): " << derivative_linear_copilot << endl;
 
-// Test case 101: Derivative of a quadratic polynomial (f(x) = x^2 + 2x + 1)
+// Test case 92: Derivative of a quadratic polynomial (f(x) = x^2 + 2x + 1)
     PolynomialWithChatGPT quadratic_poly_derivative({1, 2, 1}); // Represents f(x) = x^2 + 2x + 1
     PolynomialWithCopilot quadratic_poly_derivative_copilot({1, 2, 1}); // Represents f(x) = x^2 + 2x + 1
     auto derivative_quadratic_gpt = quadratic_poly_derivative.derivative(); // Derivative
     auto derivative_quadratic_copilot = quadratic_poly_derivative_copilot.derivative(); // Derivative
     cout << "Expected: 2x + 2" << endl; // Should evaluate to 2x + 2
-    cout << "Chat_GPT Test case 101 (Derivative of quadratic polynomial): " << derivative_quadratic_gpt << endl;
-    cout << "Copilot Test case 101 (Derivative of quadratic polynomial): " << derivative_quadratic_copilot << endl;
+    cout << "Chat_GPT Test case 92 (Derivative of quadratic polynomial): " << derivative_quadratic_gpt << endl;
+    cout << "Copilot Test case 92 (Derivative of quadratic polynomial): " << derivative_quadratic_copilot << endl;
 
-// Test case 102: Derivative of a cubic polynomial (f(x) = x^3 - 3x^2 + 2)
+// Test case 93: Derivative of a cubic polynomial (f(x) = x^3 - 3x^2 + 2)
     PolynomialWithChatGPT cubic_poly_derivative({2, 0, -3, 1}); // Represents f(x) = x^3 - 3x^2 + 2
     PolynomialWithCopilot cubic_poly_derivative_copilot({2, 0, -3, 1}); // Represents f(x) = x^3 - 3x^2 + 2
     auto derivative_cubic_gpt = cubic_poly_derivative.derivative(); // Derivative
     auto derivative_cubic_copilot = cubic_poly_derivative_copilot.derivative(); // Derivative
     cout << "Expected: 3x^2 - 6x" << endl; // Should evaluate to 3x^2 - 6x
-    cout << "Chat_GPT Test case 102 (Derivative of cubic polynomial): " << derivative_cubic_gpt << endl;
-    cout << "Copilot Test case 102 (Derivative of cubic polynomial): " << derivative_cubic_copilot << endl;
+    cout << "Chat_GPT Test case 93 (Derivative of cubic polynomial): " << derivative_cubic_gpt << endl;
+    cout << "Copilot Test case 93 (Derivative of cubic polynomial): " << derivative_cubic_copilot << endl;
 
-// Test case 103: Derivative of a polynomial with a higher degree (f(x) = 2x^4 + 3x^3 + x)
+// Test case 94: Derivative of a polynomial with a higher degree (f(x) = 2x^4 + 3x^3 + x)
     PolynomialWithChatGPT higher_degree_poly_derivative({0, 1, 0, 3, 2}); // Represents f(x) = 2x^4 + 3x^3 + x
     PolynomialWithCopilot higher_degree_poly_derivative_copilot({0, 1, 0, 3, 2}); // Represents f(x) = 2x^4 + 3x^3 + x
     auto derivative_higher_degree_gpt = higher_degree_poly_derivative.derivative(); // Derivative
     auto derivative_higher_degree_copilot = higher_degree_poly_derivative_copilot.derivative(); // Derivative
     cout << "Expected: 8x^3 + 9x^2 + 1" << endl; // Should evaluate to 8x^3 + 9x^2 + 1
-    cout << "Chat_GPT Test case 103 (Derivative of higher-degree polynomial): " << derivative_higher_degree_gpt << endl;
-    cout << "Copilot Test case 103 (Derivative of higher-degree polynomial): " << derivative_higher_degree_copilot << endl;
+    cout << "Chat_GPT Test case 94 (Derivative of higher-degree polynomial): " << derivative_higher_degree_gpt << endl;
+    cout << "Copilot Test case 94 (Derivative of higher-degree polynomial): " << derivative_higher_degree_copilot << endl;
 
-// Test case 104: Evaluate derivative at a specific point (e.g., f(x) = x^2 + 2x at x = 1)
+// Test case 95: Evaluate derivative at a specific point (e.g., f(x) = x^2 + 2x at x = 1)
     double point_value = 1;
     double eval_derivative_quadratic_gpt = quadratic_poly_derivative.derivative().evaluate(point_value); // Evaluate at x = 1
     double eval_derivative_quadratic_copilot = quadratic_poly_derivative_copilot.derivative().evaluate(point_value); // Evaluate at x = 1
     cout << "Expected: 2(1) + 2 = 4" << endl;
-    cout << "Chat_GPT Test case 104 (Evaluate derivative of quadratic at x=1): " << eval_derivative_quadratic_gpt << endl;
-    cout << "Copilot Test case 104 (Evaluate derivative of quadratic at x=1): " << eval_derivative_quadratic_copilot << endl;
+    cout << "Chat_GPT Test case 95 (Evaluate derivative of quadratic at x=1): " << eval_derivative_quadratic_gpt << endl;
+    cout << "Copilot Test case 95 (Evaluate derivative of quadratic at x=1): " << eval_derivative_quadratic_copilot << endl;
 
-// Test case 105: Evaluate derivative at another point (e.g., f(x) = x^3 - 4x at x = 2)
+// Test case 96: Evaluate derivative at another point (e.g., f(x) = x^3 - 4x at x = 2)
     PolynomialWithChatGPT cubic_poly2_derivative({0, -4, 0, 1}); // Represents f(x) = x^3 - 4x
     PolynomialWithCopilot cubic_poly2_derivative_copilot({0, -4, 0, 1}); // Represents f(x) = x^3 - 4x
     double eval_derivative_cubic_gpt = cubic_poly2_derivative.derivative().evaluate(2); // Evaluate at x = 2
     double eval_derivative_cubic_copilot = cubic_poly2_derivative_copilot.derivative().evaluate(2); // Evaluate at x = 2
     cout << "Expected: 3(2^2) - 4 = 12 - 4 = 8" << endl;
-    cout << "Chat_GPT Test case 105 (Evaluate derivative of cubic at x=2): " << eval_derivative_cubic_gpt << endl;
-    cout << "Copilot Test case 105 (Evaluate derivative of cubic at x=2): " << eval_derivative_cubic_copilot << endl;
+    cout << "Chat_GPT Test case 96 (Evaluate derivative of cubic at x=2): " << eval_derivative_cubic_gpt << endl;
+    cout << "Copilot Test case 96 (Evaluate derivative of cubic at x=2): " << eval_derivative_cubic_copilot << endl;
 
 
 }
